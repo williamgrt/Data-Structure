@@ -9,7 +9,7 @@
 class MaxQueue {
  public:
   MaxQueue(int N) {
-    data = new int[N + 1];
+    data = new int[N + 1]; // 不使用data[0]
     capacity = N;
     count = 0;
   }
