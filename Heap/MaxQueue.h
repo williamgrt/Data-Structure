@@ -45,7 +45,7 @@ class MaxQueue {
    * 由下到上的堆有序化
    */
   void swim(int k) {
-    while (k > 1 && data[k] > data[k /2]) {
+    while (k > 1 && data[k] > data[k / 2]) {
       std::swap(data[k], data[k / 2]);
       k /= 2;
     }
@@ -57,7 +57,8 @@ class MaxQueue {
   void sink(int k) {
     while (2 * k <= count) {
       int j = 2 * k;
-      if (j < count && data[j] < data[j+ 1]) {
+      // 找到当前堆节点的两个子节点中数值较大的子节点
+      if (j < count && data[j] < data[j + 1]) {
         j = j + 1;
       }
       if (data[k] >= data[j]) {
